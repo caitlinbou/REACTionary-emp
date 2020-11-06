@@ -1,13 +1,38 @@
 import React from "react";
 
-export default function EmpData() {
+export default function EmpData(props) {
   return (
     <div>
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-      </ul>
+      {props.results.map((result) => (
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">DOB</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  alt={result.name.first + " " + result.name.last}
+                  className="img-fluid"
+                  src={result.picture.thumbnail}
+                />
+              </td>
+              <td>{result.name.first + " " + result.name.last}</td>
+              <td>{result.email}</td>
+              <td>{result.phone}</td>
+              <td>{result.dob.date}</td>
+            </tr>
+          </tbody>
+        </table>
+      ))}
     </div>
   );
 }
+// TODO: convert dob to more usable form
+
