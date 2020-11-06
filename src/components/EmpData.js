@@ -3,19 +3,23 @@ import React from "react";
 export default function EmpData(props) {
   return (
     <div>
-      {props.results.map((result) => (
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Phone</th>
-              <th scope="col">DOB</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">
+              {" "}
+              <a onClick={props.sortByFirst}>Name</a>
+            </th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">DOB</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {props.results.map((result) => (
+            <tr key={result.id.value}>
               <td>
                 <img
                   alt={result.name.first + " " + result.name.last}
@@ -26,13 +30,14 @@ export default function EmpData(props) {
               <td>{result.name.first + " " + result.name.last}</td>
               <td>{result.email}</td>
               <td>{result.phone}</td>
-              <td>{result.dob.date}</td>
+              <td>{result.dob.date.slice(0, 10)}</td>
             </tr>
-          </tbody>
-        </table>
-      ))}
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
-// TODO: convert dob to more usable form
-
+// TODO: sort first name by alphabet when name col clicked on
+// TODO: filter by search results when form submitted
+// TODO: style
