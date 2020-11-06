@@ -55,5 +55,3 @@ export default class EmpContainer extends Component {
   }
 }
 
-// TODO: Should it UNsort as well? Return to natural state?
-// TODO: A way to handle when no name matches from the array without showing nothing...

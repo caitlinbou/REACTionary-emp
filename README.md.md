@@ -4,7 +4,7 @@
 
 ![REACTionary-emp](https://img.shields.io/github/languages/top/caitlinbou/REACTionary-emp)
 ## Description
-This is a REACT application that allows the user to search for employees by first name, and also to sort employees alphabetically by first name. The employees are loaded from an api called [Random](), and it is deployed on Heroku.
+This is a REACT application that allows the user to search for employees by first name, and also to sort employees alphabetically by first name. The employees are loaded from an api called [RANDOMUSER.ME](https://randomuser.me/), and it is deployed on Heroku. Design formatting is handled with bootstrap.
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -16,6 +16,12 @@ This is a REACT application that allows the user to search for employees by firs
 NPM install of node packages is required for further development.
 ## Usage 
 It is very straightforward. Search for employees by first name with the search function, click on name to alphebetize by first name. 
+
+Pleae visit the website [here](https://reactionary-emp.herokuapp.com/)
+
+Here is a sample screenshot of the application:
+
+![screenshot](public/screenshot.png)
 ## License 
 
 Copyright 2020 Caitlin Bouroncle
