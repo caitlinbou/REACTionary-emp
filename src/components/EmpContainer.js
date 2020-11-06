@@ -36,16 +36,22 @@ export default class EmpContainer extends Component {
   }
 
   sortByFirst=()=>{
-    const nameSort = this.state.results; 
-    nameSort.sort().then((res)=> console.log({results: res.data.results}))
-    .catch((err) => console.log(err));
+    let sortedResults = this.state.results.sort((a,b)=>{
+        let name1 = a.name.first,
+            name2 = b.name.first;
+        if (name1 < name2) return -1;
+        if (name1 > name2) return 1;
+        return 0;
+    }); 
+    this.setState({ results: sortedResults });
+
   }
 
   render() {
     return (
       <div>
         <Jumbotron results={this.state.results} search={this.searchByFirstName} />
-        <EmpData results={this.state.results} />
+        <EmpData results={this.state.results} sort={this.sortByFirst} />
       </div>
     );
   }

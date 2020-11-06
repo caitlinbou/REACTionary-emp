@@ -9,7 +9,7 @@ export default function EmpData(props) {
             <th scope="col"></th>
             <th scope="col">
               {" "}
-              <a onClick={props.sortByFirst}>Name</a>
+              <a onClick={props.sort}>Name</a>
             </th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
@@ -38,6 +38,4 @@ export default function EmpData(props) {
     </div>
   );
 }
-// TODO: sort first name by alphabet when name col clicked on
-// TODO: filter by search results when form submitted
-// TODO: style
+

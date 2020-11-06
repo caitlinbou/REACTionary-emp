@@ -1,21 +1,16 @@
 import React, { Component } from "react";
 
 export default class SearchForm extends Component {
-constructor(props){
-    super(props);
-    this.state = {
-        searchValue: "",
-    }
-this.handleButtonClick = this.handleButtonClick.bind(this);
-this.handleInputChange = this.handleInputChange.bind(this);
-
-  };
-  handleButtonClick(event) {
+    
+state = {
+    searchValue: ""
+}
+  handleButtonClick=(event)=>{
     event.preventDefault();
     this.props.search(this.state.searchValue);
   }
 
-  handleInputChange() {
+  handleInputChange = ()=>{
     this.setState({searchValue: document.querySelector("#search").value})
   }
 
