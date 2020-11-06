@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 export default class SearchForm extends Component {
-    
+
 state = {
     searchValue: ""
 }
-  handleButtonClick=(event)=>{
+  handleSubmit=(event)=>{
     event.preventDefault();
     this.props.search(this.state.searchValue);
   }
@@ -16,7 +16,7 @@ state = {
 
   render() {
     return (
-      <form >
+      <form onSubmit={this.handleSubmit}>
         <div className="form-group">
           <div className="form-group">
             <input
@@ -26,11 +26,10 @@ state = {
               name="name"
               className="form-control"
               id="search"
-              placeholder="Search by Name"
+              placeholder="Search by First Name"
             />
           </div>
-
-          <button onClick={this.handleButtonClick} type="button" className="btn btn-success">
+          <button type="button" className="btn btn-success">
             Search
           </button>
         </div>

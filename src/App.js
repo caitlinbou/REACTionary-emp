@@ -1,7 +1,5 @@
 import EmpContainer from "./components/EmpContainer.js";
 
-
-
 function App() {
   return (
     <div className="App">

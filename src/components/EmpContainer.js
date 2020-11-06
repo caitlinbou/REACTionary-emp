@@ -4,7 +4,6 @@ import EmpData from "./EmpData";
 import Jumbotron from "./Jumbotron.js";
 
 
-
 export default class EmpContainer extends Component {
   state = {
     results: [],
@@ -13,11 +12,10 @@ export default class EmpContainer extends Component {
 
   componentDidMount() {
     axios
-      .get("https://randomuser.me/api/?results=20&nat=us")
-    //   .then((res) => console.log({results: res.data.results}))
+      .get("https://randomuser.me/api/?results=200&nat=us")
       .then((res) => {
           this.setState({ results: res.data.results });
-          this.setState({ originalResults: res.data.results })
+          this.setState({ originalResults: res.data.results });
       })
       .catch((err) => console.log(err));
   }
@@ -26,7 +24,7 @@ export default class EmpContainer extends Component {
       let searchResults;
       if (!firstName){
           searchResults = this.state.originalResults;
-      }else {
+      } else {
             searchResults = this.state.originalResults.filter(employee =>{
             return employee.name.first === firstName;
         });
@@ -56,3 +54,6 @@ export default class EmpContainer extends Component {
     );
   }
 }
+
+// TODO: Should it UNsort as well? Return to natural state?
+// TODO: A way to handle when no name matches from the array without showing nothing...

@@ -38,4 +38,3 @@ export default function EmpData(props) {
     </div>
   );
 }
-
