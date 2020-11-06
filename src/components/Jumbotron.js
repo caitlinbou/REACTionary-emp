@@ -1,12 +1,18 @@
-import React from 'react'
+import SearchForm from "./SearchForm"
+import React, { Component } from 'react'
 
-export default function Jumbotron() {
-    return (
-    <div className="jumbotron">
+export default class Jumbotron extends Component {
+    render() {
+        return (
+            <div className="jumbotron">
         <h1 className="display-4">Employee Directory</h1>
-        <p className="lead">Click on Name to filter by name</p>
+        <SearchForm/>
+        <p className="lead">Click on "Name" below to sort</p>
         <hr className="my-4"/>
-        {/* form search will go here */}
+        
     </div>
-    )
+        )
+    }
 }
+
+
